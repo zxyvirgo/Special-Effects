@@ -1,0 +1,458 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.top{
+    background-color: #ffffff;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height:80px;
+    margin-left: 0;
+    z-index: 10;
+}
+
+.btn{
+    font-size: 20px;
+    color: #ffffff;
+    margin-top: 15px;
+    margin-right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: red;
+    float: right;
+    -webkit-animation-name: "buttonLight";
+    -webkit-animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+    text-decoration: none;
+    line-height: 40px;
+    text-align: center;
+}
+
+@-webkit-keyframes buttonLight {
+    from { background: rgba(96, 203, 27,0.5); -webkit-box-shadow: 0 0 5px rgba(255, 255, 255, 0.3) inset, 0 0 3px rgba(220, 120, 200, 0.5); color: red; }
+    25% { background: rgba(196, 203, 27,0.8); -webkit-box-shadow: 0 0 10px rgba(255, 155, 255, 0.5) inset, 0 0 8px rgba(120, 120, 200, 0.8); color: white; }
+    50% { background: rgba(196, 203, 127,1); -webkit-box-shadow: 0 0 5px rgba(155, 255, 255, 0.3) inset, 0 0 3px rgba(220, 120, 100, 1); color: orange; }
+    75% { background: rgba(196, 203, 27,0.8); -webkit-box-shadow: 0 0 10px rgba(255, 155, 255, 0.5) inset, 0 0 8px rgba(120, 120, 200, 0.8); color: white; }
+    to { background: rgba(96, 203, 27,0.5); -webkit-box-shadow: 0 0 5px rgba(255, 255, 255, 0.3) inset, 0 0 3px rgba(220, 120, 200, 0.5); color: green; } }
+
+.J_rate{
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 150px;
+    width: 300px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
+    font-family:"黑体";
+    float: right;
+}
+/*
+
+@font-face
+{
+    font-family: myFirstFont;
+    src: url('/example/css3/Sansation_Light.ttf')
+    ,url('/example/css3/Sansation_Light.eot'); */
+/* IE9+ *//*
+
+}
+*/
+
+.J_rate img{
+    width:1em;
+    height: 1em;
+}
+
+.head{
+    position: fixed;
+    top:80px;
+    left:0;
+    width: 100%;
+    height: 40px;
+    z-index: 10;
+    background-color:#2BABE8;
+    margin-left: 0;
+}
+
+
+.list{
+    display: block;
+    width: 600px;
+    height: 40px;
+    margin: 0 auto;
+    list-style-type: none;
+}
+.list >li >a{
+    float: left;
+    width: 100px;
+    height: 40px;
+    color: #ffffff;
+/*    background-color: red;*/
+    line-height: 40px;
+    text-decoration: none;
+    font-family:"黑体";
+    text-align: center;
+}
+.list >li >a:hover{
+    background-color: #48CBFF;
+}
+
+.self{   /*将下拉框浮到了新的一层*/
+    display: none;
+    margin-top: 40px;
+    margin-left: 200px;  /*这一层的设计很容易出问题*/
+    height: 100px;
+    width: 100px;
+    list-style-type: none;
+    z-index: 200;
+    position: absolute;
+    font-family: "黑体";
+}
+
+.list li:hover .self{
+    display:block;
+}
+
+.self a{
+    text-decoration: none;
+    color: #48CBFF;
+}
+
+.ads{
+    position: relative;
+    height: 100px;
+    width: 1000px;
+    margin: 0 auto;
+    border: 1px solid #AAAAAB;
+}
+
+.search{
+    position: relative;
+    width: 1000px;
+    height: 35px;
+    border-style: solid;
+    border-width: 0 0 1px 0;  /*这样也能起到隔开的效果*/
+    border-color:  #AAAAAB;
+    z-index:-10;  /*为啥会浮动到这一层*/
+    line-height: 35px;
+    margin: 0 auto;
+    margin-top: 10px;     /* 不知这种好不好,但是不加会与前面的重叠*/
+    padding-top: 10px;
+}
+
+.search input[type=button]{
+    display: block;
+    width: 50px;
+    float: right;
+    border-radius:0px 3px 3px 0px;
+    border: 1px solid;
+    height: 26px;
+    margin-right: 50px;
+    z-index: 40;
+}
+
+.search input[type=text]{
+    display:block;
+    width: 130px;
+    float: right;    /*让框子对齐了*/
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border: solid 1px 0px 1px 1px;
+    height: 20px;
+    background-image: url("img/search-box.png") ;
+    background-repeat:no-repeat;
+    background-size: contain;
+    padding-left: 20px;
+    -o-background-size: contain;
+    -moz-background-size: contain;
+    -webkit-background-size: contain;
+}
+
+.content{
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
+/*    background-color: green;*/
+    height: 600px;
+}
+.content_left{
+    padding-left: 50px;
+    padding-right: 5px;
+    width: 550px;
+    height: 550px;
+    float: left;
+    border-style: solid;
+    border-width: 0 1px 0 0px;  /*这样也能起到隔开的效果*/
+    border-color:  #AAAAAB;
+    padding-top: 5px;
+}
+
+.border{
+border-style: solid;
+border-width: 0 1px 0 0px;  /*这样也能起到隔开的效果*/
+border-color:  #AAAAAB;
+}   /* 抽取出来的共同属性，有待重新组合*/
+
+.i1,.i2,.i3,.i4,.i5,.i6,.i7,.i8,.i9,.i10,
+.i11,.i12,.i13,.i14,.i15,.i16,.i17,.i18,.i19,.i20,
+.i21,.i22,.i23,.i24,.i25,.i26,.i27,.i28,.i29,.i30,
+.i31,.i32,.i33,.i34,.i35,.i36,.i37,.i38,.i39,.i40,
+.i41,.i42,.i43,.i44,.i45,.i46,.i47,.i48,.i49,.i50,
+.i51,.i52,.i53,.i54,.i55,.i56,.i57,.i58,.i59,.i60,
+.i71,.i72,.i73,.i74,.i75,.i76,.i77,.i78,.i79,.i80,
+.i81,.i82,.i83,.i84,.i85,.i86,.i87,.i88,.i89,.i90,
+.i91,.i92,.i93,.i94,.i95,.i96,.i97,.i98,.i99,.i100{
+    width: 45px;
+    height: 45px;
+    float:left;
+    margin:5px;
+    background-image: url("img/main.jpg") ;
+}
+
+.pic{
+/*    background-image: none;*/
+    background-color:  #48CBFF; /*之前对bug的判断失误，可能只是class设置不对照成的*/
+    opacity: 0.2;
+}
+
+.i1{background-position:0 0}.i2{background-position:-50px 0}.i3{background-position:-100px 0}.i4{background-position:-150px 0}.i5{background-position:-200px 0}.i6{background-position:-250px 0}.i7{background-position:-300px 0}.i8{background-position:-350px 0}.i9{background-position:-400px 0}.i10{background-position:-450px 0}.i11{background-position:0 -50px}.i12{background-position:50px -50px}.i13{background-position:-100px -50px}.i14{background-position:-150px -50px}.i15{background-position:-200px -50px}.i16{background-position:-250px -50px}.i17{background-position:-300px -50px}.i18{background-position:-350px -50px}.i19{background-position:-400px -50px}.i20{background-position:-450px -50px}.i21{background-position:0 -100px}.i22{background-position:50px -100px}.i23{background-position:-100px -100px}.i24{background-position:-150px -100px}.i25{background-position:-200px -100px}.i26{background-position:-250px -100px}.i27{background-position:-300px -100px}.i28{background-position:-350px -100px}.i29{background-position:-400px -100px}.i30{background-position:-450px -100px}.i31{background-position:0 -150px}.i32{background-position:50px -150px}.i33{background-position:-100px -150px}.i34{background-position:-150px -150px}.i35{background-position:-200px -150px}.i36{background-position:-250px -150px}.i37{background-position:-300px -150px}.i38{background-position:-350px -150px}.i39{background-position:-400px -150px}.i40{background-position:-450px -150px}.i41{background-position:0 -200px}.i42{background-position:50px -200px}.i43{background-position:-100px -200px}.i44{background-position:-150px -200px}.i45{background-position:-200px -200px}.i46{background-position:-250px -200px}.i47{background-position:-300px -200px}.i48{background-position:-350px -200px}.i49{background-position:-400px -200px}.i50{background-position:-450px -200px}.i51{background-position:0 -250px}.i52{background-position:50px -250px}.i53{background-position:-100px -250px}.i54{background-position:-150px -250px}.i55{background-position:-200px -250px}.i56{background-position:-250px -250px}.i57{background-position:-300px -250px}.i58{background-position:-350px -250px}.i59{background-position:-400px -250px}.i60{background-position:-450px -250px}.i61{background-position:0 -300px}.i62{background-position:50px -300px}.i63{background-position:-100px -300px}.i64{background-position:-150px -300px}.i65{background-position:-200px -300px}.i66{background-position:-250px -300px}.i67{background-position:-300px -300px}.i68{background-position:-350px -300px}.i69{background-position:-400px -300px}.i70{background-position:-450px -350px}.i71{background-position:0 -350px}.i72{background-position:50px -350px}.i73{background-position:-100px -350px}.i74{background-position:-150px -350px}.i75{background-position:-200px -350px}.i76{background-position:-250px -350px}.i77{background-position:-300px -350px}.i78{background-position:-350px -350px}.i79{background-position:-400px -350px}.i80{background-position:-450px -400px}.i81{background-position:0 -400px}.i82{background-position:50px -400px}.i83{background-position:-100px -400px}.i84{background-position:-150px -400px}.i85{background-position:-200px -400px}.i86{background-position:-250px -400px}.i87{background-position:-300px -400px}.i88{background-position:-350px -400px}.i89{background-position:-400px -400px}.i90{background-position:-450px -400px}.i91{background-position:0 -450px}.i92{background-position:50px -450px}.i93{background-position:-100px -450px}.i94{background-position:-150px -450px}.i95{background-position:-200px -450px}.i96{background-position:-250px -450px}.i97{background-position:-300px -450px}.i98{background-position:-350px -450px}.i99{background-position:-400px -450px}.i100{background-position:-450px -450px}
+.content_right{
+    float: right;
+    width: 280px;
+    height: 400px;
+    margin-right: 100px;
+}
+
+.content_right_img{
+    display: block;
+    margin-top: 10px;
+    width: 280px;
+    height: 300px;
+
+    background-image: url("img/person.gif");
+    background-size: contain;
+    -o-background-size: contain;
+    -moz-background-size: contain;
+    -webkit-background-size: contain;
+
+}
+
+.content_right_item{
+    margin-top: 20px;
+    width: 280;
+    height: 180px;
+    border: 1px solid #AAAAAB;
+}
+
+.menu{
+    position: fixed;
+    top:50%;
+    left: 50%;
+    margin-left: 400px;
+
+}
+
+.menu li{
+    list-style-type: none;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.menu li a{
+    width: 40px;
+    height: 30px;
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    line-height: 30px;
+    font-family: "黑体";
+    background-color: #2BABE8;
+    box-shadow: 10px 10px 5px #888888 ;  /*添加的阴影*/
+}
+.menu li:hover a{
+    background-color: #48CBFF;
+
+}
+
+.sprite{
+    width:394px;
+    height:589px;
+}
+
+
+/*
+轮播效果*/
+.wrap {
+    width: 280px;
+    height: 170px;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;   /*放在新的框子中*/
+}
+
+.wrap ul {
+    position: absolute;
+    top: 15px;
+    left: -2px;
+}
+
+.wrap ul li {
+    width: 280px;
+    height:150px;
+}
+.p0,.p1,.p2,.p3,.p4{
+    background-image: url("img/ads.jpg");
+}
+.p0{
+    background-position: 0px -2px;
+}
+.p1{
+    background-position: 0 -170px;
+}
+.p2{
+    background-position: 0 -338px;
+}
+.p3{
+    background-position: 0 -505px;
+}
+.p4{
+    background-position: 0 -671px;
+}
+
+.wrap ol {
+    position: absolute;
+    right: 5px;
+    bottom:0px;
+    list-style: none;
+    font-family: "黑体";
+}
+
+.wrap ol li {
+    height: 20px;
+    width: 20px;
+    background: #ccc;
+    margin-left: 5px;
+    color: #000;
+    float: left;
+    line-height:20px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+
+}
+
+.wrap ol .on {
+    background: #E97305;
+    color: #fff;
+}
+
+/*一整个大盒子，也包含3D的在里面*/
+.shape-3D{
+    width:1000px; /*这个出现的也很多，有待抽取出来*/
+  /*  border-width: 1px;*/
+    height: 500px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.view{width: 400px;height: 400px;/*background: #cc99ff;*//*margin: 120px auto;*/
+    -webkit-perspective:1200px;-webkit-perspective-origin:50% 100px;}
+.main{-webkit-transform-style:preserve-3D;width: 220px;margin: 0px auto;height: 220px;
+    /* animation-timing-function: ease-in-out; *//*动画频率，和transition-timing-function是一样的*/
+    -webkit-animation-name:'sun';/*动画属性名，也就是我们前面keyframes定义的动画名*/
+    -webkit-animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+  /*  background-color: red; 测试效果的*/
+}
+.main div{
+    width: 220px;
+    height: 220px;
+    position: absolute;
+    opacity: 0.8;
+    /*backface-visibility:hidden;*/
+}
+/*3D旋转*/
+.main .front{-webkit-transform: translateZ(110px);
+    background-image: url("img/d5.jpg");background-position: 0px 0px;}
+.main .back{-webkit-transform:translateZ(-110px) rotateY(180deg);}
+.main .top{-webkit-transform:rotateX(-90deg) translateY(-110px) ;-webkit-transform-origin:top center;
+    background-image: url("img/d5.jpg");background-position: 0px 0px;}
+.main .bottom{-webkit-transform:rotateX(90deg) translateY(110px) ;-webkit-transform-origin:bottom center;
+    background-image: url("img/d5.jpg");background-position: 0px 0px;}
+.main .left{-webkit-transform:rotateY(-90deg) translateX(-110px) ;-webkit-transform-origin:center left;
+    background-image: url("img/d5.jpg");background-position: 0px 0px;}
+.main .right{-webkit-transform:rotateY(90deg) translateX(110px) ;-webkit-transform-origin:center right;
+    background-image: url("img/d5.jpg");background-position: 0px 0px;}
+/*改变位置角度*/
+@-webkit-keyframes sun{
+    0% {-webkit-transform:rotateY(0deg);}
+    10% {-webkit-transform:rotateY(90deg);}
+    20% {-webkit-transform:rotateY(180deg);}
+    30% {-webkit-transform:rotateY(270deg);}
+    40% {-webkit-transform:rotateY(360deg);}
+    50% {-webkit-transform:rotateX(0deg); -webkit-transform-origin:center center;}
+    60% {-webkit-transform:rotateX(90deg); -webkit-transform-origin:center center;}
+    70% {-webkit-transform:rotateX(180deg);-webkit-transform-origin:center center;}
+    80% {-webkit-transform:rotateX(270deg);-webkit-transform-origin:center center;}
+    90% {-webkit-transform:rotateX(360deg);-webkit-transform-origin:center center;}
+}
+
+
+/*制作首页的遮罩*/
+.mark{
+    width: 100%;
+    height:100%;
+    position: fixed;
+    top:0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 200;
+    background-color: #000000;
+    opacity: 0.6;
+}
+
+/*放入新的一层，才不会也透明的，但是要居中就再加一个盒子,但是和浏览器的窗口有点关系*/
+.index{
+    position:fixed ;
+    width: 100%;
+    height: 400px;
+    z-index:250 ;
+    top:20%;
+}
+
+
+/*用一个盒子背景和内容*/
+.index .index_center{
+
+    display: block;
+    position: relative;
+    width: 600px;
+    height: 400px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-image: url("img/index2.jpg");
+}
+
+.index a{
+    position: absolute;
+    width: 80px;
+    height: 30px;
+    z-index: 300;
+    background-color: red;
+    top: 0;
+    right: 0;
+    background-color: #000000;
+    text-decoration: none;
+    margin: 10px;
+    color: #ffffff;
+    border:#48CBFF solid 2px;
+    border-radius: 15px;
+    text-align: center;
+    line-height: 30px;
+    opacity: 0.5;
+}
+

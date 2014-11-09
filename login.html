@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        #editor{
+            border: 1px solid black;
+            height: 250px;
+            margin: 15px;
+            padding: 10px;
+            overflow: scroll;
+        }
+    </style>
+    <script type="text/javascript">
+        function load(){
+            var finput = document.getElementById("data");
+            var editor = document.getElementById("editor");
+            var f = finput.files[0];
+
+            if(f){
+                var r = new FileReader();
+                r.onload = function(e){  editor.innerHTML = e.target.result }
+                r.readAsText(f);
+            }else{
+                editor.innerHTML = "Failed to load file"
+            }
+
+            function format(c){document.execCommand(c,false,false);}
+        }
+    </script>
+</head>
+<body>
+<h3>HTML File Reader Test</h3>
+<p>Select a file:</p>
+<input type="file" id="data">
+<a href="#" onclick="load()">Load</a>
+</p>
+<p>
+    <a href="#" onclick="format('bold')">Bold</a>
+    <a href="#" onclick="format('italic')">Italic</a>
+    <a href="#" onclick="format('underline')">Underline</a>
+</p>
+<div id="editor" contenteditable="true"></div>
+</body>
+</html>
